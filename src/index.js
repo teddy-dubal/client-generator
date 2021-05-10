@@ -2,9 +2,9 @@
 
 import "isomorphic-fetch";
 import program from "commander";
-import parseHydraDocumentation from "@api-platform/api-doc-parser/lib/hydra/parseHydraDocumentation";
-import parseSwaggerDocumentation from "@api-platform/api-doc-parser/lib/swagger/parseSwaggerDocumentation";
-import parseOpenApi3Documentation from "@api-platform/api-doc-parser/lib/openapi3/parseOpenApi3Documentation";
+import parseHydraDocumentation from "@teddy-dubal/api-doc-parser/lib/hydra/parseHydraDocumentation";
+import parseSwaggerDocumentation from "@teddy-dubal/api-doc-parser/lib/swagger/parseSwaggerDocumentation";
+import parseOpenApi3Documentation from "@teddy-dubal/api-doc-parser/lib/openapi3/parseOpenApi3Documentation";
 import { version } from "../package.json";
 import generators from "./generators";
 
@@ -28,7 +28,7 @@ program
   .option("--bearer [bearer]", "Token for bearer auth (Hydra only)")
   .option(
     "-g, --generator [generator]",
-    'The generator to use, one of "next", "nuxt", "quasar", "react", "react-native", "typescript", "vue", "vuetify"',
+    'The generator to use, one of "next", "nuxt", "quasar", "react", "react-native", "typescript", "vue", "vuetify","vuetify2"',
     "next"
   )
   .option(
@@ -121,7 +121,6 @@ parser(entrypointWithSlash)
         resource.fields = filterDeprecated(resource.fields);
         resource.readableFields = filterDeprecated(resource.readableFields);
         resource.writableFields = filterDeprecated(resource.writableFields);
-
         generator.generate(ret.api, resource, outputDirectory, serverPath);
 
         return resource;

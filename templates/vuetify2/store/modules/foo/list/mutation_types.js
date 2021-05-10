@@ -1,0 +1,7 @@
+export const RESET = 'RESET'
+export const SET_ITEMS = 'SET_ITEMS'
+export const SET_ERROR = 'SET_ERROR'
+export const SET_VIEW = 'SET_VIEW'
+export const TOGGLE_LOADING = 'TOGGLE_LOADING'
+export const TOGGLE_LOADING_SEARCH = 'TOGGLE_LOADING_SEARCH'
+export const SET_ITEMS_SEARCH = 'SET_ITEMS_SEARCH'

@@ -5,6 +5,7 @@ import ReactNativeGenerator from "./generators/ReactNativeGenerator";
 import TypescriptInterfaceGenerator from "./generators/TypescriptInterfaceGenerator";
 import VueGenerator from "./generators/VueGenerator";
 import VuetifyGenerator from "./generators/VuetifyGenerator";
+import Vuetify2Generator from "./generators/Vuetify2Generator";
 import QuasarGenerator from "./generators/QuasarGenerator";
 
 function wrap(cl) {
@@ -28,6 +29,8 @@ export default function generators(generator = "react") {
       return wrap(VueGenerator);
     case "vuetify":
       return wrap(VuetifyGenerator);
+    case "vuetify2":
+      return wrap(Vuetify2Generator);
     case "quasar":
       return wrap(QuasarGenerator);
   }

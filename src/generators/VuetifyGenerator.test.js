@@ -1,4 +1,4 @@
-import { Api, Resource, Field } from "@api-platform/api-doc-parser";
+import { Api, Resource, Field } from "@teddy-dubal/api-doc-parser";
 import fs from "fs";
 import tmp from "tmp";
 import VuetifyGenerator from "./VuetifyGenerator";

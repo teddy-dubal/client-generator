@@ -1,4 +1,4 @@
-import { Api, Resource, Field } from "@api-platform/api-doc-parser/lib";
+import { Api, Resource, Field } from "@teddy-dubal/api-doc-parser/lib";
 import fs from "fs";
 import tmp from "tmp";
 import TypescriptInterfaceGenerator from "./TypescriptInterfaceGenerator";
