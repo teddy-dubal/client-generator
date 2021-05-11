@@ -11,7 +11,7 @@
       <v-alert :value="Boolean(deleteError.length)" dismissible type="error">\{{
         $t(deleteError)
       }}</v-alert>
-      <{{{titleUcFirst}}}Form
+      <{{{lc}}}-form
         v-if="item"
         :handle-cancel="handleCancel"
         :handle-submit="onSendForm"

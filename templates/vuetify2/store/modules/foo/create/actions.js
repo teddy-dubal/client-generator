@@ -5,11 +5,10 @@ import API from '@/config/_routes'
 export const create = ({ commit }, values) => {
   commit(types.SET_ERROR, '')
   commit(types.TOGGLE_LOADING)
-// {{{name}}}
+// /{{{name}}}
   return fetch(API.parse(API.{{{uc}}}, values), { method: 'POST',  body: values })
     .then((response) => {
       commit(types.TOGGLE_LOADING)
-
       return response.data
     })
     .then((data) => {
@@ -17,15 +16,12 @@ export const create = ({ commit }, values) => {
     })
     .catch((e) => {
       commit(types.TOGGLE_LOADING)
-
       if (e.name === 'SubmissionError') {
         commit(types.SET_VIOLATIONS, e.errors._violations)
         // eslint-disable-next-line
         commit(types.SET_ERROR, e.errors._error)
-
         return
       }
-
       commit(types.SET_ERROR, e.message)
     })
 }

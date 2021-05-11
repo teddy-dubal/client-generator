@@ -327,7 +327,7 @@ export default {
       // Order of pos array , is importante
       const pos = ['m', 'h', 'dm', 'mh', 'dw']
       const result = []
-      for (let ind = 0; ind < pos.length; ind++) {
+      for (let ind = 0 ind < pos.length ind++) {
         const v = cmd[pos[ind]]
         if (Array.isArray(v)) {
           if (v.length === 0) {

@@ -4,7 +4,7 @@ import API from '@/config/_routes'
 
 export const del = ({ commit }, item) => {
   commit(types.TOGGLE_LOADING)
-// {{{name}}}
+// /{{{name}}}
   return fetch(API.parse(API.{{{uc}}}, item), { method: 'DELETE' })
     .then(() => {
       commit(types.TOGGLE_LOADING)

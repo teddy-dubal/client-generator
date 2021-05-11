@@ -57,7 +57,12 @@ export default class {
     // Format the generated code using Prettier
     let content = this.templates[template](context);
     if (template.endsWith(".js")) {
-      content = prettier.format(content, { parser: "babel" });
+      content = prettier.format(content, {
+        parser: "babel",
+        semi: false,
+        singleQuote: true,
+        trailingComma: "none",
+      });
     } else if (template.endsWith(".ts") || template.endsWith(".tsx")) {
       content = prettier.format(content, { parser: "babel-ts" });
     }

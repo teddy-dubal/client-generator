@@ -8,7 +8,7 @@
       <v-alert :value="Boolean(error.length)" dismissible type="error">\{{
         $t(error)
       }}</v-alert>
-      <{{{titleUcFirst}}}Form
+      <{{{lc}}}-form
         :handle-cancel="handleCancelCreate"
         :handle-submit="onSendForm"
         :handle-update-field="updateField"

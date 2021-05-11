@@ -25,7 +25,7 @@ export const retrieve = ({ commit }, obj) => {
 export const update = ({ commit, state }, payload) => {
   commit(types.SET_ERROR, '')
   commit(types.TOGGLE_LOADING)
-// {{{name}}}
+// /{{{name}}}
   return fetch(API.parse(API.{{{uc}}}, { id: state.retrieved.id }), {
     method: 'PUT',
     body: state.retrieved,
@@ -37,15 +37,12 @@ export const update = ({ commit, state }, payload) => {
     })
     .catch((e) => {
       commit(types.TOGGLE_LOADING)
-
       if (e.name === 'SubmissionError') {
         commit(types.SET_VIOLATIONS, e.errors._violations)
         // eslint-disable-next-line
         commit(types.SET_ERROR, e.errors._error)
-
         return
       }
-
       // eslint-disable-next-line
       commit(types.SET_ERROR, e.errors._error)
     })

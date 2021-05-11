@@ -66,6 +66,6 @@ export default {
 </script>
 <style scoped>
 .vue-tel-input {
-  width: inherit;
+  width: inherit
 }
 </style>

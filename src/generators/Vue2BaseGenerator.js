@@ -132,13 +132,9 @@ export default class extends BaseGenerator {
   generateFiles(api, resource, dir, params) {
     // Create directories
     // These directories may already exist
-    [
-      `${dir}/config`,
-      `${dir}/error`,
-      `${dir}/router`,
-      `${dir}/store/modules`,
-      `${dir}/utils`,
-    ].forEach((dir) => this.createDir(dir, false));
+    [`${dir}/error`, `${dir}/router`, `${dir}/store/modules`].forEach((dir) =>
+      this.createDir(dir, false)
+    );
     // error
     this.createFile(
       "error/SubmissionError.js",
