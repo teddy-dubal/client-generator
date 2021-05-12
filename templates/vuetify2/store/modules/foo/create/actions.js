@@ -5,7 +5,7 @@ import API from '@/config/_routes'
 export const create = ({ commit }, values) => {
   commit(types.SET_ERROR, '')
   commit(types.TOGGLE_LOADING)
-// /{{{name}}}
+// API_ROUTE [{{{uc}}}: '/{{{name}}}',]
   return fetch(API.parse(API.{{{uc}}}, values), { method: 'POST',  body: values })
     .then((response) => {
       commit(types.TOGGLE_LOADING)

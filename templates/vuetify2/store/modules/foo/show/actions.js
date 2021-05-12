@@ -4,7 +4,7 @@ import API from '@/config/_routes'
 
 export const retrieve = ({ commit }, obj) => {
   commit(types.TOGGLE_LOADING)
-// /{{{name}}}
+// API_ROUTE [{{{uc}}}: '/{{{name}}}',]
   return fetch(API.parse(API.{{{uc}}}, obj))
     .then(response => response.data)
     .then((data) => {

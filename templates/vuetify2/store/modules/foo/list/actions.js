@@ -4,7 +4,7 @@ import API from '@/config/_routes'
 
 const getItems = ({ commit }, opt = { query: { page: 1 }, data: {} }) => {
   commit(types.TOGGLE_LOADING)
-// /{{{name}}}
+// API_ROUTE [{{{uc}}}: '/{{{name}}}',]
   const page =
     `${API.{{{uc}}} }?` +
     Object.entries(opt.query || {})
@@ -31,7 +31,7 @@ const getItems = ({ commit }, opt = { query: { page: 1 }, data: {} }) => {
 
 export const search = ({ commit }, val) => {
   commit(types.TOGGLE_LOADING_SEARCH)
-// /{{{name}}}
+// API_ROUTE [{{{uc}}}: '/{{{name}}}',]
   return fetch(API.parse(`${API.{{{uc}}}_SEARCH}?q=${val}`))
     .then(response => response.data)
     .then(data => {

@@ -1,6 +1,6 @@
-import SubmissionError from '../../../../error/SubmissionError'
-import fetch from '../../../../utils/fetch'
+import fetch from '@/utils/fetch'
 import * as types from './mutation_types'
+import API from '@/config/_routes'
 
 export const reset = ({ commit }) => {
   commit(types.RESET)
@@ -8,7 +8,7 @@ export const reset = ({ commit }) => {
 
 export const retrieve = ({ commit }, obj) => {
   commit(types.TOGGLE_LOADING)
-// {{{name}}}
+// API_ROUTE [{{{uc}}}: '/{{{name}}}',]
   return fetch(API.parse(API.{{{uc}}}, obj))
     .then(response => response.data)
     .then((data) => {
@@ -22,10 +22,10 @@ export const retrieve = ({ commit }, obj) => {
 }
 
 
-export const update = ({ commit, state }, payload) => {
+export const update = ({ commit, state }) => {
   commit(types.SET_ERROR, '')
   commit(types.TOGGLE_LOADING)
-// /{{{name}}}
+// API_ROUTE [{{{uc}}}: '/{{{name}}}',]
   return fetch(API.parse(API.{{{uc}}}, { id: state.retrieved.id }), {
     method: 'PUT',
     body: state.retrieved,
