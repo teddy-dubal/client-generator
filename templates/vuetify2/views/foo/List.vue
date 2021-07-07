@@ -145,7 +145,7 @@ watch: {
     this.get{{{ titleUcFirst }}}A(this.params)
 
     window.getApp.$emit('APP_SNACK', {
-      text: this.$t('{{{lc}}}created.ok'),
+      text: this.$t('{{{lc}}}.created.ok'),
       color: 'green'
     })
   },
@@ -157,7 +157,7 @@ watch: {
     this.get{{{ titleUcFirst }}}A(this.params)
 
     window.getApp.$emit('APP_SNACK', {
-      text: this.$t('{{{lc}}}updated.ok'),
+      text: this.$t('{{{lc}}}.updated.ok'),
       color: 'green'
     })
   },
@@ -168,7 +168,7 @@ watch: {
     this.onCancel{{{ titleUcFirst }}} ()
     this.get{{{ titleUcFirst }}}A(this.params)
     window.getApp.$emit('APP_SNACK', {
-      text: this.$t('{{{lc}}}deleted.ok'),
+      text: this.$t('{{{lc}}}.deleted.ok'),
       color: 'green'
     })
   },
@@ -208,7 +208,7 @@ methods: {
     delete{{{ titleUcFirst }}}Iem: '{{{lc}}}/del/del'
     }),
 delete{{{ titleUcFirst }}}(item) {
-  if (window.confirm(this.$t('{{{lc}}}form.delete.confirm'))) {
+  if (window.confirm(this.$t('{{{lc}}}.form.delete.confirm'))) {
     this.delete{{{ titleUcFirst }}}Iem({ ...item })
   }
 },
