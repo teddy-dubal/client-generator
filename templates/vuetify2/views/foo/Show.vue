@@ -101,4 +101,5 @@ export default {
       showReset: '{{{lc}}}/show/reset'
     })
 }
+}
 </script>

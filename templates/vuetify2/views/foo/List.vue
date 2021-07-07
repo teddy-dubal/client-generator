@@ -116,10 +116,10 @@ export default {
       search: null,
       select: null,
       item{{{ titleUcFirst }}}: { },
-    item{{{ titleUcFirst }}} Val: { },
+    item{{{ titleUcFirst }}}Val: { },
     params: { query: { page: 1 }, data: { id: this.$route.params.id } },
     filter: { },
-    show{{{ titleUcFirst }}} Modal: false,
+    show{{{ titleUcFirst }}}Modal: false,
       headers: [
         {{#forEach fields}}
         { text: '{{{../lc}}}.list.header.{{{name}}}', value: '{{{name}}}', sortable: false, align: 'left' },
@@ -131,53 +131,53 @@ export default {
 watch: {
   page(it) {
     this.params.query.page = it
-    this.get{{{ titleUcFirst }}} A(this.params)
+    this.get{{{ titleUcFirst }}}A(this.params)
   },
   search(val) {
     if (this.isLoadingSearch || !val) return
     this.getSearch{{{ titleUcFirst }}} (val)
   },
-  created{{{ titleUcFirst }}} G(item) {
+  created{{{ titleUcFirst }}}G(item) {
     if (!item) {
       return
     }
     this.onCancel{{{ titleUcFirst }}} ()
-    this.get{{{ titleUcFirst }}} A(this.params)
+    this.get{{{ titleUcFirst }}}A(this.params)
 
     window.getApp.$emit('APP_SNACK', {
       text: this.$t('{{{lc}}}created.ok'),
       color: 'green'
     })
   },
-  updated{{{ titleUcFirst }}} G(item) {
+  updated{{{ titleUcFirst }}}G(item) {
     if (!item) {
       return
     }
     this.onCancel{{{ titleUcFirst }}} ()
-    this.get{{{ titleUcFirst }}} A(this.params)
+    this.get{{{ titleUcFirst }}}A(this.params)
 
     window.getApp.$emit('APP_SNACK', {
       text: this.$t('{{{lc}}}updated.ok'),
       color: 'green'
     })
   },
-  deleted{{{ titleUcFirst }}} G(item) {
+  deleted{{{ titleUcFirst }}}G(item) {
     if (!item) {
       return
     }
     this.onCancel{{{ titleUcFirst }}} ()
-    this.get{{{ titleUcFirst }}} A(this.params)
+    this.get{{{ titleUcFirst }}}A(this.params)
     window.getApp.$emit('APP_SNACK', {
       text: this.$t('{{{lc}}}deleted.ok'),
       color: 'green'
     })
   },
-  retrieved{{{ titleUcFirst }}} G(val) {
+  retrieved{{{ titleUcFirst }}}G(val) {
     if (!val) {
       return
     }
-    this.item{{{ titleUcFirst }}} Val = val
-    this.show{{{ titleUcFirst }}} Modal = true
+    this.item{{{ titleUcFirst }}}Val = val
+    this.show{{{ titleUcFirst }}}Modal = true
   }
 },
 computed: {
@@ -189,9 +189,9 @@ computed: {
           itemsSearch: '{{{lc}}}/list/itemsSearch',
             isLoadingSearch: '{{{lc}}}/list/isLoadingSearch',
               violations{{{ titleUcFirst }}}: '{{{lc}}}/create/violations',
-                updated{{{ titleUcFirst }}} G: '{{{lc}}}/update/updated',
-                  created{{{ titleUcFirst }}} G: '{{{lc}}}/create/created',
-                    deleted{{{ titleUcFirst }}} G: '{{{lc}}}/del/deleted'
+                updated{{{ titleUcFirst }}}G: '{{{lc}}}/update/updated',
+                  created{{{ titleUcFirst }}}G: '{{{lc}}}/create/created',
+                    deleted{{{ titleUcFirst }}}G: '{{{lc}}}/del/deleted'
     })
   },
 components: {
@@ -199,33 +199,33 @@ components: {
     Create
 },
 created() {
-  this.get{{{ titleUcFirst }}} A(this.params)
+  this.get{{{ titleUcFirst }}}A(this.params)
 },
 methods: {
     ...call({
   get{{{ titleUcFirst }}}A: '{{{lc}}}/list/items',
   getSearch{{{ titleUcFirst }}}: '{{{lc}}}/list/search',
-    delete {{{ titleUcFirst }}}Iem: '{{{lc}}}/del/del'
+    delete{{{ titleUcFirst }}}Iem: '{{{lc}}}/del/del'
     }),
-delete {{{ titleUcFirst }}} (item) {
+delete{{{ titleUcFirst }}}(item) {
   if (window.confirm(this.$t('{{{lc}}}form.delete.confirm'))) {
-    this.delete{{{ titleUcFirst }}} Iem({ ...item })
+    this.delete{{{ titleUcFirst }}}Iem({ ...item })
   }
 },
   add{{{ titleUcFirst }}} () {
-    this.item{{{ titleUcFirst }}} Val = {}
-    this.show{{{ titleUcFirst }}} Modal = true
+    this.item{{{ titleUcFirst }}}Val = {}
+    this.show{{{ titleUcFirst }}}Modal = true
   },
     edit{{{ titleUcFirst }}} (item) {
-      this.item{{{ titleUcFirst }}} Val = item
-      this.show{{{ titleUcFirst }}} Modal = true
+      this.item{{{ titleUcFirst }}}Val = item
+      this.show{{{ titleUcFirst }}}Modal = true
     },
       onCancel{{{ titleUcFirst }}} () {
-        this.show{{{ titleUcFirst }}} Modal = false
+        this.show{{{ titleUcFirst }}}Modal = false
       },
         onSelect(val) {
-  this.item{{{ titleUcFirst }}} Val = { id: val }
-  this.show{{{ titleUcFirst }}} Modal = true
+  this.item{{{ titleUcFirst }}}Val = { id: val }
+  this.show{{{ titleUcFirst }}}Modal = true
 }
   }
 }
