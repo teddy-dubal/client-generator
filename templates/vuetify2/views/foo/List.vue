@@ -203,7 +203,7 @@ created() {
 },
 methods: {
     ...call({
-  get{{{ titleUcFirst }}}A: '{{{lc}}}/list/items',
+  get{{{ titleUcFirst }}}A: '{{{lc}}}/list/default',
   getSearch{{{ titleUcFirst }}}: '{{{lc}}}/list/search',
     delete{{{ titleUcFirst }}}Iem: '{{{lc}}}/del/del'
     }),
