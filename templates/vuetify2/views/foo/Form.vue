@@ -1,12 +1,10 @@
 <template>
   <form @submit.prevent="handleFormSubmit">
     <v-container fluid>
-      {{#forEach formFields}}
-      {{#ifOdd index}}
       <v-row>
-      {{/ifOdd}}
+        <v-col>
+      {{#forEach formFields}}
       {{#compare type "==" "checkbox" }}
-        <v-col cols="12" sm="6" md="6">
           <v-checkbox
             v-model="item.{{{name}}}"
             data-vv-name="{{{name}}}"
@@ -16,17 +14,12 @@
             :error-messages="violations.{{{name}}} || verrors.collect('{{{name}}}')"
             :label="$t('{{{../lc}}}.form.{{{name}}}')"{{#if required}}
             required{{/if}}
-            @blur="$v.item.{{{name}}}.$touch()"
           />
-        </v-col>
       {{/compare}}
       {{#compare type "==" "date" }}
-        <v-col cols="12" sm="6" md="6">
           date
-        </v-col>
       {{/compare}}
       {{#compare type "==" "time" }}
-        <v-col cols="12" sm="6" md="6">
           <v-time-picker
             v-model="item.{{{name}}}"
             data-vv-name="{{{name}}}"
@@ -38,16 +31,12 @@
             {{#if required}}
             required{{/if}}
           />
-        </v-col>
       {{/compare}}
       {{#compare type "==" "dateTime" }}
         <!-- todo : fix the dateTime format, not supported by default on vuetify -->
-        <v-col cols="12" sm="6" md="6">
           datetime
-        </v-col>
       {{/compare}}
       {{#compare type "==" "number" }}
-        <v-col cols="12" sm="6" md="6">
           <v-text-field
             data-vv-name="{{{name}}}"
             :data-vv-as="$t('{{{../lc}}}.form.{{{name}}}')"
@@ -58,13 +47,10 @@
             :label="$t('{{{../lc}}}.form.{{{name}}}')"{{#if required}}
             required{{/if}}{{#if step}}
             step="{{{step}}}"{{/if}}
-            @blur="$v.item.{{{name}}}.$touch()"
           />
-        </v-col>
       {{/compare}}
       {{#compare type "==" "text" }}
       {{#if reference}}
-        <v-col cols="12" sm="6" md="6">
           <v-combobox
             v-model="item.{{{name}}}"
             data-vv-name="{{{name}}}"
@@ -81,9 +67,7 @@
             item-value="@id"{{#unless maxCardinality}}
             chips{{/unless}}
           />
-        </v-col>
       {{else}}
-        <v-col cols="12" sm="6" md="6">
           <v-text-field
             v-model="item.{{{name}}}"
             data-vv-name="{{{name}}}"
@@ -93,19 +77,33 @@
             :error-messages="violations.{{{name}}} || verrors.collect('{{{name}}}')"
             :label="$t('{{{../lc}}}.form.{{{name}}}')"{{#if required}}
             required{{/if}}
-            @blur="$v.item.{{{name}}}.$touch()"
           />
-        </v-col>
       {{/if}}
       {{/compare}}
-      {{#ifEven index}}
-      </v-row>
-      {{/ifEven}}
-      {{#if isLast}}{{#ifOdd index}}
-        <v-col cols="12"></v-col>
-      </v-row>
-      {{/ifOdd}}{{/if}}
       {{/forEach}}
+      </v-col>
+    </v-row>
+    <v-row
+      align="center"
+      justify="center"
+    >
+      <v-col>
+        <v-btn
+          color="default"
+          @click="handleCancel"
+          block
+          large
+        >\{{ $t('common.form.btn.cancel') }}</v-btn>
+      </v-col>
+      <v-col>
+        <v-btn
+          type="submit"
+          color="success"
+          block
+          large
+        >\{{ $t('common.form.btn.submit') }}</v-btn>
+      </v-col>
+    </v-row>
     </v-container>
   </form>
 </template>
