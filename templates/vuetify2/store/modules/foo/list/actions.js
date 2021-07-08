@@ -1,15 +1,14 @@
 import fetch from '@/utils/fetch'
 import * as types from './mutation_types'
 import API from '@/config/_routes'
+import querystring from 'query-string'
 
-const getItems = ({ commit }, opt = { query: { page: 1 }, data: {} }) => {
+const items = ({ commit }, opt = { query: { page: 1 }, data: {} }) => {
   commit(types.TOGGLE_LOADING)
 // API_ROUTE [{{{uc}}}: '/{{{name}}}',]
   const page =
     `${API.{{{uc}}} }?` +
-    Object.entries(opt.query || {})
-      .map(([key, val]) => `${key}=${val}`)
-      .join('&')
+    querystring.stringify(opt.query || {})
       return fetch(API.parse(page, opt.data))
     .then(response => response.data)
     .then(data => {
@@ -44,4 +43,4 @@ export const search = ({ commit }, val) => {
     })
 }
 
-export default getItems
+export default items
