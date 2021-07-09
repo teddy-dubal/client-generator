@@ -70,11 +70,11 @@ export default {
   watch: {
     // eslint-disable-next-line object-shorthand,func-names
     initialValues: function (item) {
-      this.retrieve(item.id)
+      this.retrieve(item)
     }
   },
   created () {
-    this.retrieve(this.initialValues.id)
+    this.retrieve(this.initialValues)
   },
   beforeDestroy () {
     this.reset()

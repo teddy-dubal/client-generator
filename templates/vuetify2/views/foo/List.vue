@@ -64,7 +64,6 @@
                 >
                   <v-icon>fas fa-trash</v-icon>
                 </v-btn>
-                <vh-menu :item="item" class="d-inline-block" />
               </template>
             </v-data-table>
           </v-col>
